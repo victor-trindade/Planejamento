@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>HOME1</h1>
+    {% for coord in coordinators %}
+        {% for s in coord.store_set.all %}
+            {{s.coord_name}}
+            <a href="{% url 'coord_detail' coord.id %}">
+                {{s.visit_day}}
+                <br>
+            </a>
+        {% endfor %}
+    {% endfor %}
+</body>
+</html>

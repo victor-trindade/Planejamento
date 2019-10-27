@@ -20,9 +20,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from coordinator import urls as coord_url
+from home import url as home
 urlpatterns = [
-
-    path('a/', include(coord_url)),
+    path('', include(home)),
     path('admin/', admin.site.urls),
 ]
