@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes</title>
+</head>
+<body>
+    <p>{{object.name}}</p>
+    <ul>
+    {% for store in object.store_set.all %}
+        <li>{{store}}</li>
+    {% endfor %}
+    </ul>
+
+</body>
+</html>
