@@ -1,5 +1,8 @@
 from django.db import models
+from import_export.widgets import ForeignKeyWidget
+
 from coordinator.models import Coordinator
+from import_export import resources, fields
 
 
 class Store(models.Model):
@@ -12,3 +15,13 @@ class Store(models.Model):
 
     def __str__(self):
         return self.name
+
+#Class for django-import-export
+# class StoreResource(resources.ModelResource):
+#     coordinator_name = fields.Field(
+#         column_name='coordinator_name',
+#         attribute='coordinator',
+#         widget=ForeignKeyWidget(Coordinator, 'name'))
+#
+#     class Meta:
+#         model = Coordinator

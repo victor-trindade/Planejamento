@@ -1,0 +1,43 @@
+{% load static %}
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap cdn -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!--Select 2 cdn-->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <!-- estaticos -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'js/jscript.js'%}"></script>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
+    <!--<script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>-->
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body id="bg-img">
+    <div class="container" id="bg-site" >
+        <div class="row">
+            <!--Header Banner-->
+
+            <!--Section principal-->
+            <section class="col-lg-9 mt-4  pr-md-3 px-0 ">
+                <main id="novidade" class="boxshadow">
+                    {% block main %}
+                    {% endblock %}
+                </main>
+            </section>
+
+            <footer class=" col-12 mt-3 p-0 border border-danger "style="min-height: 200px">
+                <!--<img src="{% static 'imgs/rodape.png' %}" class="img-fluid" width="100%" alt="Banner">-->
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

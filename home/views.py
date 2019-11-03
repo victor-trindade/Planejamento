@@ -11,7 +11,8 @@ class MonthArchiveViewPage(MonthArchiveView):
     date_field = "visit_day"
     allow_future = True
     def get_queryset(self,  **kwargs):
-        return Store.objects.all().order_by('coordinator__name','-visit_day')
+        fullname = self.request.user.get_full_name()
+        return Store.objects.filter(coordinator__name=fullname.upper()).order_by('coordinator__name','-visit_day')
 
 class WeekArchiveViewPage(WeekArchiveView):
 
@@ -21,8 +22,3 @@ class WeekArchiveViewPage(WeekArchiveView):
     week_format = "%W"
     allow_future = True
 
-    # def get_context_data(self, **kwargs): # sobrescrevendo a função para injetar contexto
-    #     context = super(HomePageView, self).get_context_data()
-    #     context['coords'] = .objects.all() #Pega todos os coordenadores do banco
-    #     context['user_name'] = self.request.user.username
-    #     return context #injeta o novo contexto no template
