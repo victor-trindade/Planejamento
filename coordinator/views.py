@@ -6,3 +6,5 @@ from .models import Coordinator
 
 class CoordinatorDetail(DetailView):
     model = Coordinator
+
+
