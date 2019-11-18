@@ -12,20 +12,23 @@
         {% endifchanged %}
         <ul>
         {% ifchanged store.coordinator.name and store.visit_day %}
-        <li><a href="#">{{store.visit_day|date:'d/m/Y'}}</a></li>
+        <a class="btn btn-primary" data-toggle="collapse" href="#data{{store.visit_day|date:'dmY'}}" role="button" aria-expanded="false" aria-controls="{{store.visit_day|date:'d-m-Y'}}">
+            {{store.visit_day|date:'d/m/Y'}}
+        </a>
+
         {% endifchanged %}
             </ul>
-        <ul>{{store.name}}</ul>
+            <div class="collapse" id="data{{store.visit_day|date:'dmY'}}">
+            <div class="card card-body">
+                {{store.name}}
+            </div>
+        </div>
 
     {% endfor%}
 
-    <p>
-        {% if previous_month %}
-            Previous Month: {{ previous_month|date:"F Y" }}
-        {% endif %}
-        {% if next_month %}
-            Next Month: {{ next_month|date:"F Y" }}
-        {% endif %}
-    </p>
-</div>
+
+
+</p>
+
 {% endblock %}
+

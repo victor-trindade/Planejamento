@@ -14,6 +14,7 @@ class UserResource(resources.ModelResource):
         model = User
 
     def before_import_row(self, row, **kwargs):
-        self.password = row.get('password')
-        row['password'] = make_password(self.password)
-
+        password = row.get('password')
+        row['password'] = make_password(password)
+        email = row.get('email')
+        row['username'] = email

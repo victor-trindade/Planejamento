@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'import_export',
+    'crispy_forms',
     'home',
     'coordinator',
     'store',
@@ -106,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
-DATE_INPUT_FORMATS = ('%d-%m-%Y','%Y-%m-%d')
+
 LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'America/Sao_Paulo'
@@ -122,3 +123,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    'statics',
+]
+
+CRISPY_TEMPLATE_PACK="bootstrap4"
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = 'media'
+
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL ='archive_today'
+LOGOUT_REDIRECT_URL ='login'

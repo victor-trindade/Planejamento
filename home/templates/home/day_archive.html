@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+
+{% block main %}
+
+    <h1 class="p-0">Planejamento do dia</h1>
+
+<h4>{{ day }}</h4>
+<br>
+    {% for store in object_list %}
+
+        {% ifchanged store.coordinator.name  %}
+            <li>{{store.coordinator.name}}</li>
+        {% endifchanged %}
+
+        {% ifchanged store.coordinator.name and store.visit_day %}
+        <a href="#">{{store.visit_day|date:'d/m/Y'}}</a>
+        {% endifchanged %}
+
+        <a class="" data-toggle="collapse" href="#loja-{{store.id}}" role="button" aria-expanded="false" aria-controls="{{store.id}}">
+            <div class="m-2">
+                {{store.name}}
+            </div>
+        </a>
+        <div class="collapse" id="loja-{{store.id}}">
+            <div class="card card-body">
+                <p>Entrada: <br> {{store.check_in}}</p>
+                <p>Saída: <br> {{store.check_out}}</p>
+            </div>
+        </div>
+
+    {% endfor%}
+<br><br>
+
+{% now 'Y' as current_year %}
+{% now 'm' as current_month %}
+<a href="{% url 'archive_month' current_year current_month %}">Planejamento do Mês</a>
+
+
+
+
+
+
+
+{% endblock %}
