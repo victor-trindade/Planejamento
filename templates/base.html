@@ -15,32 +15,31 @@
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <!-- estaticos -->
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/jscript.js'%}"></script>
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
     <!--<script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>-->
     <title>{% block title %} {% endblock %}</title>
 </head>
-
-
-
 <body >
-    <div class="container" >
 
-        <!--Header Banner-->
+<div class="container" >
 <header class=" col-12 p-0">
-    <img src="#" class="img-fluid" width="100%" alt="Banner">
+    <div class="col-12  p-2 bg-logo">
+        <img src="https://drive.google.com/uc?id=1vGsOQ0wi-cGBoqtdXgvBjep_srhuUuz_" class="mx-auto d-block img-fluid" alt="Logo">
+
+    </div>
     {% include 'navbar.html' %}
 </header>
-        <div class="row justify-content-center">
-            <section class="col-lg-12">
-                <main class="jumbotron">
-                    {% block main %}
-                    {% endblock %}
-                </main>
-            </section>
-
-        </div>
+    <div class="row justify-content-center">
+        <section class="col-lg-12">
+            <main class="jumbotron boxshadow">
+                {% block main %}
+                {% endblock %}
+            </main>
+        </section>
     </div>
+</div>
+
 </body>
 </html>

@@ -1,0 +1,25 @@
+{% load static %}
+
+body ul {
+list-style: none;
+border: 2px;
+}
+
+
+html body{
+background-color: #f5f5f5;
+}
+
+.bg-logo{
+background-color: #7e7e7e;
+}
+
+.boxshadow{
+    box-shadow: 0 0.3em 0.3em rgba(0, 0, 0, 0.5);
+}
+
+
+.jumbotron{
+background: #f0f0f0 !important;
+box-shadow: 10px !important;
+}

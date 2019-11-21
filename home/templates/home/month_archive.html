@@ -1,6 +1,6 @@
 {% extends 'base.html'%}
 {% block main %}
-<div>
+
     <h2>Seja Bem vindo {{ user.get_full_name }}</h2>
 
     <h3>Planejamento Mensal</h3>
@@ -12,23 +12,14 @@
         {% endifchanged %}
         <ul>
         {% ifchanged store.coordinator.name and store.visit_day %}
-        <a class="btn btn-primary" data-toggle="collapse" href="#data{{store.visit_day|date:'dmY'}}" role="button" aria-expanded="false" aria-controls="{{store.visit_day|date:'d-m-Y'}}">
             {{store.visit_day|date:'d/m/Y'}}
-        </a>
 
         {% endifchanged %}
             </ul>
-            <div class="collapse" id="data{{store.visit_day|date:'dmY'}}">
-            <div class="card card-body">
                 {{store.name}}
-            </div>
-        </div>
+
 
     {% endfor%}
 
 
-
-</p>
-
 {% endblock %}
-
